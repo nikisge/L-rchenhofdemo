@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lärchenhof Voice Agent</title>
+    <!-- Retell Web SDK per CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@retellai/client-sdk/dist/index.umd.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 2rem;
+      }
+      button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎙️ Sprich mit dem Lärchenhof Voice Agent</h1>
+    <p>Klicke auf den Button, um das Gespräch zu starten.</p>
+    <button onclick="startCall()">Starten</button>
+
+    <script>
+      async function startCall() {
+        const client = await retell.init({
+          apiKey: 'key_375f6ed2b36edfde5326bde6c35c', // 👈 API-Key eintragen
+        });
+
+        await client.startCall({
+          agentId: 'agent_ea5f9b5400b0d61268879028bd', // 👈 Agent-ID eintragen
+        });
+      }
+    </script>
+  </body>
+</html>
